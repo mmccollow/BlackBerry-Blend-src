@@ -1,0 +1,55 @@
+@ngdoc overview
+@name Dashboard
+
+@description
+
+# Dashboard
+
+Each component on the dashboard is represented by a an app
+in bbApps and so are the frames. The apps themselves rely heavily on the
+states for rendering and data management. They are also is represented by a
+directive which in turn uses an include to render an app-specific template.
+Joined with the template, each app should have a controller and most likely
+services as well.
+
+The dashboard itself is not run with any particular logic (no controller, no 
+services) but is a composition of a couple of directives and some CSS located
+in the folder `/dashboard/`. Each app on the dashboard has:
+
+**A folder**  
+Many of the apps has "real app" counterparts such as BBM and thus already
+have a folder. However for example the "Hub" frame does not. Since we are
+building a seperate module, we should have a seperate folder for it as well
+
+**Seperate logic**  
+Within the above mentioned folder, a seperate javascript-file named
+`[app name].dashboard.js`. This should contain a controller and eventual
+services/directives.
+
+**Seperate template and styling**  
+Each app also has a seperate template, `[app name].dashboard.html`, and, if
+needed a seperate CSS-file, `[app name].dashboard.css`.
+
+## The template
+The template contains a reference to the related controller in the
+root-element of the template. Upon loading the template, the controller will 
+instanciate. On the root element, there is a ngSwitch evaluating the app state
+(`app` is available as scope-object, reflecting the app in the app registry in
+`bbApps`). The controller and/or related services are responsible for
+moving the app through different states. State-flow is outlined below.
+
+<img src="images/flow-dashboard-states.png" alt="Different states that every app is using." />
+*Different states*
+
+## Loading
+
+When the the dashboard is initiated (HTML is loaded) it recognizes it
+instanciates the below processes asynchronosly.
+<img src="images/flow-dashboard-loading.png" alt="Loading the dashboard" />
+
+
+## Tips
+
+- Be careful if you want to use nested controllers when building apps for the dasboard, it might trigger unwanted digest cycles in AngularJS.
+- Each state can be animated with an animation for entering and leaving a state. Read on about animations in angular for how.
+

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<targets>
+
+    <!-- URLS -->
+    <target>
+        <actions>
+            <action>bb.action.SHARE</action>
+            <action>bb.action.OPEN</action>
+            <action>bb.action.VIEW</action>
+        </actions>
+        <types>
+            <type>*</type>
+        </types>
+        <uris>
+            <uri>http://</uri>
+            <uri>https://</uri>
+        </uris>
+    </target>
+    
+    <!-- DOCS2GO -->
+    <target>
+        <actions>
+            <action>bb.action.SHARE</action>
+            <action>bb.action.OPEN</action>
+            <action>bb.action.VIEW</action>
+        </actions>
+        <types>
+            <type>application/msword</type>
+            <type>application/vnd.ms-excel</type>
+            <type>application/vnd.ms-excel.sheet.macroEnabled.12</type>
+            <type>application/vnd.ms-excel.template.macroEnabled.12</type>
+            <type>application/vnd.ms-powerpoint</type>
+            <type>application/vnd.mspowerpoint.presentation.macroEnabled.12</type>
+            <type>application/vnd.mspowerpoint.slideshow.macroEnabled.12</type>
+            <type>application/vnd.ms-powerpoint.template.macroEnabled.12</type>
+            <type>application/vnd.ms-word.document.macroEnabled.12</type>
+            <type>application/vnd.openxmlformats-officedocument.presentationml.presentation</type>
+            <type>application/vnd.openxmlformats-officedocument.presentationml.slideshow</type>
+            <type>application/vnd.openxmlformats-officedocument.presentationml.template</type>
+            <type>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</type>
+            <type>application/vnd.openxmlformats-officedocument.spreadsheetml.template</type>
+            <type>application/vnd.openxmlformats-officedocument.wordprocessingml.document</type>
+            <type>application/vnd.openxmlformats-officedocument.wordprocessingml.template</type>
+        </types>
+        <uris>
+            <uri>file://</uri>
+        </uris>
+        <exts>
+            <ext>doc</ext>
+            <ext>xls</ext>
+            <ext>ppt</ext>
+        </exts>
+    </target>
+    
+    <!-- AUDIO -->
+    <target>
+        <actions>
+            <action>bb.action.SHARE</action>
+            <action>bb.action.OPEN</action>
+            <action>bb.action.VIEW</action>
+        </actions>
+        <types>
+            <type>audio/3gpp</type>
+            <type>audio/3gpp2</type>
+            <type>audio/aac</type>
+            <type>audio/amr</type>
+            <type>audio/amr-nb</type>
+            <type>audio/amr-wb</type>
+            <type>audio/asf</type>
+            <type>audio/avi</type>
+            <type>audio/flac</type>
+            <type>audio/g722</type>
+            <type>audio/H263</type>
+            <type>audio/H264</type>
+            <type>audio/m4a</type>
+            <type>audio/m4v</type>
+            <type>audio/mka</type>
+            <type>audio/mp2</type>
+            <type>audio/mp3</type>
+            <type>audio/mp4</type>
+            <type>audio/mpeg2</type>
+            <type>audio/mpeg3</type>
+            <type>audio/mpeg4</type>
+            <type>audio/ogg</type>
+            <type>audio/qcelp</type>
+            <type>audio/quicktime</type>
+            <type>audio/vnd.qcelp</type>
+            <type>audio/wma</type>
+            <type>audio/x-aac</type>
+            <type>audio/x-flac</type>
+            <type>audio/x-matroska</type>
+            <type>audio/x-mp2ps</type>
+            <type>audio/x-mp2ts</type>
+            <type>audio/x-ms-asf</type>
+            <type>audio/x-msvideo</type>
+            <type>audio/x-ms-wma</type>
+            <type>audio/x-ogg</type>
+            <type>audio/x-qcelp</type>
+        </types>
+        <uris>
+            <uri>file://</uri>
+        </uris>
+        <exts>
+            <ext>wav</ext>
+            <ext>amr</ext>
+            <ext>mp3</ext>
+        </exts>
+    </target>
+    
+    <!-- IMAGES -->
+    <target>
+        <actions>
+            <action>bb.action.SHARE</action>
+            <action>bb.action.OPEN</action>
+            <action>bb.action.VIEW</action>
+        </actions>
+        <types>
+            <type>image/png</type>
+            <type>image/jpeg</type>
+            <type>image/bmp</type>
+            <type>image/gif</type>
+            <type>image/jpeg</type>
+            <type>image/ms-bmp</type>
+            <type>image/tif</type>
+            <type>image/tiff</type>
+            <type>image/x-bitmap</type>
+            <type>image/x-bmp</type>
+            <type>image/x-ms-bmp</type>
+            <type>image/x-win-bitmap</type>
+            <type>image/x-windows-bmp</type>
+            <type>image/x-xbitmap</type>
+        </types>
+        <uris>
+            <uri>file://</uri>
+        </uris>
+        <exts>
+            <ext>bmp</ext>
+            <ext>gif</ext>
+            <ext>jpg</ext>
+            <ext>jpeg</ext>
+            <ext>png</ext>
+            <ext>tif</ext>
+        </exts>
+    </target>
+    
+    <!-- VIDEO -->
+    <target>
+        <actions>
+            <action>bb.action.SHARE</action>
+            <action>bb.action.OPEN</action>
+            <action>bb.action.VIEW</action>
+        </actions>
+        <types>
+            <type>video/3gpp</type>
+            <type>video/3gpp2</type>
+            <type>video/asf</type>
+            <type>video/avi</type>
+            <type>video/H264</type>
+            <type>video/m4a</type>
+            <type>video/m4v</type>
+            <type>video/mkv</type>
+            <type>video/mp4</type>
+            <type>video/mpeg4</type>
+            <type>video/wmv</type>
+            <type>video/x-matroska</type>
+            <type>video/x-mp2ps</type>
+            <type>video/x-mp2ts</type>
+            <type>video/x-ms-asf</type>
+            <type>video/x-msvideo</type>
+            <type>video/x-ms-video</type>
+        </types>
+        <uris>
+            <uri>file://</uri>
+        </uris>
+        <exts>
+            <ext>avi</ext>
+            <ext>m4v</ext>
+        </exts>
+    </target>
+    
+    <!-- PDF -->
+    <target>
+        <actions>
+            <action>bb.action.SHARE</action>
+            <action>bb.action.OPEN</action>
+            <action>bb.action.VIEW</action>
+        </actions>
+        <types>
+            <type>application/pdf</type>
+        </types>
+        <uris>
+            <uri>file://</uri>
+        </uris>
+        <exts>
+            <ext>pdf</ext>
+        </exts>
+    </target>
+
+
+    <target>
+        <actions>
+            <action>bb.action.OPEN</action>
+        </actions>
+        <types>
+            <type>application/vnd.blackberry.file_picker</type>
+        </types>
+    </target>
+
+
+    <!-- TODO: Email (messages) -->
+</targets>

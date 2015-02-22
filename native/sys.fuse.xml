@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<qnx xmlns="http://www.qnx.com/schemas/application/1.0">
+  <id>sys.fuse</id>
+  <name>BlackBerry Fuse</name>
+  <versionNumber>1.0.1</versionNumber>
+  <buildId>50</buildId>
+  <description>BlackBerry Fuse</description>
+  <author>Research In Motion Limited</author>
+  <packageId>gYABgOQWagv3fU6DN3PbYTsScIM</packageId>
+
+  <action system="true">run_native</action>
+  <permission system="true">permanent</permission>
+  <permission>gain_bp2p_group</permission>
+  <permission>gain_enterprise_group</permission>
+  <permission>access_perimeter_mgr</permission>
+  <permission>access_hybrid_routing</permission>
+  <permission>access_enterprise_shared</permission>
+  <permission>read_deviceinfo</permission>
+  <permission>read_device_identifying_information</permission>
+  <permission>access_authentication_validate_control</permission>
+  <permission>read_perimeter_settings</permission>
+  <permission>access_bbm_data</permission>
+  <permission>access_pim</permission>
+  <permission>access_pimdomain_messages</permission>
+  <permission>access_pimdomain_contacts</permission>
+  <permission>access_pimdomain_calendars</permission>
+  <permission>access_pimdomain_calllogs</permission>
+  <permission>access_pimdomain_while_ui_locked</permission>
+  <permission>list_pimdomain_accounts</permission>
+  <permission>access_pimdata_social</permission>
+  <permission>access_shared</permission>
+  <permission>access_sms_mms</permission>
+  <permission>access_phone</permission>
+  <permission>gain_bbm_data_consumers_group</permission>
+  <permission>use_bbm_sharewith</permission>
+  <permission>access_email_settings</permission>
+  <permission>access_phone_private_control</permission>
+  <permission>administer_phone</permission>
+  <permission>use_notify_system</permission>
+  <permission>access_cclagent_service</permission>
+  <permission>access_dialog_system_control</permission>
+  <permission>access_pimdomain_contacts_settings</permission>
+  <icon>
+    <image>assets/images/homescreen_icon.png</image>
+  </icon>
+
+  <entryPoint id="FuseUI">
+    <name>BlackBerry Blend</name>
+    <entryPointType>Qnx/Cascades</entryPointType>
+  </entryPoint>
+  <asset entryPointId="FuseUI" path="libfuseui.so.1.0.0" type="Qnx/Elf">libfuseui.so.1.0.0</asset>
+
+  <entryPoint id="blendginx">
+    <name>blendginx</name>
+    <entryProperty var="timeout" value="15" />
+    <entryProperty var="path" value="(p644)nginxcontrol" />
+    <action system="true">_sys_run_service</action>
+    <action>use_navigator_background</action>
+  </entryPoint>
+  <asset entryPointId="blendginx" path="blendginx" type="Qnx/Elf">blendginx</asset>
+
+  <entryPoint id="traffic_server">
+    <name>trafficserver</name>
+    <entryProperty var="timeout" value="15" />
+    <entryProperty var="path" value="(p644)trafficservercontrol" />
+    <action system="true">_sys_run_service</action>
+    <action>use_navigator_background</action>
+    <env var="LD_LIBRARY_PATH" value="app/native/lib"/>
+    <env var="SOCK_SO_SETFIB" value="1" />
+    <env var="PERIMETER" value="enterprise" />
+    <env var="NET_PPS_ROOT" value="/pps/services/networking/enterprise" />
+  </entryPoint>
+  <asset entryPointId="traffic_server" path="traffic_server" type="Qnx/Elf">traffic_server</asset>
+
+  <entryPoint id="Proxi">
+    <name>Proxi</name>
+    <entryProperty var="timeout" value="15" />
+    <entryProperty var="flags" value="a" />
+    <entryProperty var="path" value="(p640)proxicontrol" />
+    <action system="true">_sys_run_service</action>
+    <action>use_navigator_background</action>
+  </entryPoint>
+  <asset entryPointId="Proxi" path="Proxi" type="Qnx/Elf">Proxi</asset>
+
+  <entryPoint id="InvokeProxy">
+    <name>InvokeProxy</name>
+    <entryProperty var="timeout" value="15" />
+    <entryProperty var="flags" value="a" />
+    <entryProperty var="path" value="(p644)invokecontrol" />
+    <action system="true">_sys_run_service</action>
+    <action>use_navigator_background</action>
+  </entryPoint>
+  <asset entryPointId="InvokeProxy" path="InvokeProxy" type="Qnx/Elf">InvokeProxy</asset>
+
+  <invoke-target id="com.rim.blend.settings.target">
+  	<entry-point-id>FuseUI</entry-point-id>
+  	<invoke-target-name>BlackBerry Fuse</invoke-target-name>
+  	<invoke-target-type>application</invoke-target-type>
+  	<filter>
+  		<action>bb.action.OPEN</action>
+  		<mime-type>text/plain</mime-type>
+  		<property var="uris" value="blendsettings://" />
+  	</filter>
+  </invoke-target>
+
+</qnx>
